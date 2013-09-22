@@ -1,0 +1,22 @@
+For nestedRotatingMotion:
+mkdir nestedRotationMotion;
+mkdir nestedRotationMotion/Make;
+new files in nestedRotationMotion/Make: 'files' and 'options'
+In 'files', the new source and new library names are defined. For nestedRotationMotion:
+	nestedRotationMotion.C
+	LIB = $(FOAM_USER_LIBBIN)/libNestedRotationMotion
+In 'options':
+	EXE_INC = \
+	-I$(LIB_SRC)/dynamicFvMesh/lnInclude
+	-I$(LIB_SRC)/dynamicFvMesh/solidBodyMotionFvMesh/lnInclude
+	LIB_LIBS = \
+	-lOpenFOAM \
+	-ldynamicFvMesh \
+	-lsolidBodyMotionFvMesh
+The make script:
+	#!/bin/bash
+	wclean
+	wmake libso
+	cp $FOAM_USER_LIBBIN/libNestedRotationMotion.so $FOAM_LIBBIN
+Add this line to controlDict:
+	libs ( "libNestedRotationMotion.so" )

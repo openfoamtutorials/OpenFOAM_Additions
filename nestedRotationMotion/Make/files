@@ -1,0 +1,2 @@
+nestedRotationMotion.C
+LIB = $(FOAM_USER_LIBBIN)/libNestedRotationMotion
