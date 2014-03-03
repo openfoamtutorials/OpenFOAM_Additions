@@ -1,0 +1,23 @@
+For cycloRamp:
+
+mkdir cycloRamp;
+mkdir cycloRamp/Make;
+new files in cycloRamp/Make: 'files' and 'options'
+In 'files', the new source and new library names are defined. For cycloRamp:
+	cycloRamp.C
+	LIB = $(FOAM_USER_LIBBIN)/libCycloRamp
+In 'options':
+	EXE_INC = \
+	-I$(LIB_SRC)/dynamicFvMesh/lnInclude
+	-I$(LIB_SRC)/dynamicFvMesh/solidBodyMotionFvMesh/lnInclude
+	LIB_LIBS = \
+	-lOpenFOAM \
+	-ldynamicFvMesh \
+	-lsolidBodyMotionFvMesh
+The make script:
+	#!/bin/bash
+	wclean
+	wmake libso
+	cp $FOAM_USER_LIBBIN/libCycloRamp.so $FOAM_LIBBIN
+Add this line to controlDict:
+	libs ( "libCycloRamp.so" )

@@ -1,0 +1,2 @@
+cycloRamp.C
+LIB = $(FOAM_USER_LIBBIN)/libCycloRamp
