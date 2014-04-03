@@ -1,2 +1,5 @@
 Just run:
 ./remake
+
+Then add this line to controlDict:
+libs ( "libCycloRamp.so" );
