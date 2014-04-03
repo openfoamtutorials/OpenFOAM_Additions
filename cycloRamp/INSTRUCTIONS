@@ -1,4 +1,7 @@
-Just run:
+'sudo' and login
+
+Then go to main directory of this source and run:
+chmod +x remake
 ./remake
 
 Then add this line to controlDict:
