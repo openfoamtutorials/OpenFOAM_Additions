@@ -77,21 +77,21 @@ Foam::solidBodyMotionFunctions::rampedAxisRotationMotion::transformation() const
 
     vector baseTheta
     (
-        t*degToRad(radialVelocity0_.x()),
-        t*degToRad(radialVelocity0_.y()),
-        t*degToRad(radialVelocity0_.z())
+        t*radialVelocity0_.x(),
+        t*radialVelocity0_.y(),
+        t*radialVelocity0_.z()
     );
     vector thetaDot0
     (
-        degToRad(radialVelocity0_.x()),
-        degToRad(radialVelocity0_.y()),
-        degToRad(radialVelocity0_.z())
+        radialVelocity0_.x(),
+        radialVelocity0_.y(),
+        radialVelocity0_.z()
     );
     vector thetaDotf
     (
-        degToRad(radialVelocityf_.x()),
-        degToRad(radialVelocityf_.y()),
-        degToRad(radialVelocityf_.z())
+        radialVelocityf_.x(),
+        radialVelocityf_.y(),
+        radialVelocityf_.z()
     );
     vector dThetaDot=thetaDotf-thetaDot0;
     
